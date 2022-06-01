@@ -82,7 +82,7 @@ var carDetails = {
 */
 
 //Code Here
-const {color, make, model, year} = car
+const {color, make, model, year} = carDetails
 
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
@@ -114,7 +114,10 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function totalPopulation( obj ) {
+  const {utah, california, texas, arizona} = obj
+  return utah + california + texas + arizona
+}
 
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
@@ -128,7 +131,10 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function ingredients( obj ) {
+  const {carb, fat, protein} = obj
+  return [carb, fat, protein]
+}
 
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
@@ -150,7 +156,8 @@ var user = {
 */
 
 //Code Here
-
+user.name = "Bryan G. Smith"
+user.email = "bryan.smith@devmounta.in"
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
@@ -158,7 +165,7 @@ var user = {
 */
 
 //Code Here
-
+delete user.age
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
@@ -168,8 +175,15 @@ var user = {
 */
 
 //Code here
-
-
+class Cat {
+  constructor(name, age, color){
+    this.name = name
+    this.age = age
+    this.color = color
+  }
+}
+const iDislikeCats = new Cat('iDislikeCats', 0, 'invisible')
+console.log(iDislikeCats.name)
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
@@ -180,7 +194,18 @@ var user = {
 */
 
 //Code here
-
+class Wizard {
+  constructor(name, age, favoriteSpell){
+    this.name = name
+    this.age = age
+    this.favoriteSpell = favoriteSpell
+  }
+  castSpell() {
+    console.log(`${this.name} has cast ${this.favoriteSpell}`)
+  }
+}
+const billy = new Wizard('Billy', 17, 'make me rich')
+billy.castSpell()
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
     Write a class called Phone. We'll use it as if we were creating
@@ -205,7 +230,23 @@ var user = {
 */
 
 //Code Here
-
+class Phone {
+  constructor(brand, model, storage, color, price){
+    this.brand = brand
+    this.model = model
+    this.storage = storage
+    this.color = color
+    this.price = price
+    this.sold = false
+  }
+  sell(){
+    this.sold = true
+    console.log(`${this.brand} ${this.model} has been sold.`)
+  }
+  changePrice(newPrice) {
+    this.price = newPrice
+  }
+}
   
 /*
     Next make three new phone instances using your class.
@@ -218,7 +259,9 @@ var user = {
 */
 
 //Code Here
-
+let phone1 = new Phone('Samsung', 'GalazyS20', '64', 'black', '399.99')
+let phone2 = new Phone('Apple', 'Iphone 11 Pro', '128', 'white', '349.99')
+let phone3 = new Phone('BlackBerry', 'Dinosaur', '8', 'black', '4.99')
 /* 
   Call the changePrice function on one of your phones, 
   don't forget to pass in a new price 
@@ -227,7 +270,8 @@ var user = {
 */ 
 
 //Code Here 
-
+phone2.changePrice(299.99)
+console.log(phone2)
 
 /*
   Now call the sell method on one of your other phone objects
@@ -236,7 +280,8 @@ var user = {
 */
 
 //Code Here 
-
+phone1.sell()
+console.log(phone1.sold)
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
